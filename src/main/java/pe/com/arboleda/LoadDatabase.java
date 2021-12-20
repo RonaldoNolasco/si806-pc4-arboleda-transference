@@ -2,8 +2,6 @@ package pe.com.arboleda;
 
 import java.time.LocalDateTime;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,25 +17,23 @@ import pe.com.arboleda.repository.UserRepository;
 
 @Configuration
 public class LoadDatabase {
-  private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
-
   @Bean
   CommandLineRunner initDatabase(UserRepository userRepository, CurrencyRepository currencyRepository, AccountRepository accountRepository, TransferenceRepository transferenceRepository) {
 
     return args -> {
-      log.info("Preloading " + userRepository.save(new User(1, "rnolascoc@uni.pe", "prueba123", 254785)));
-      log.info("Preloading " + userRepository.save(new User(2, "fbendezui@uni.pe", "prueba123", 586874)));
-      log.info("Preloading " + userRepository.save(new User(3, "mvelar@uni.pe", "prueba123", 868743)));
-      log.info("Preloading " + userRepository.save(new User(4, "ysuarezr@uni.pe", "prueba123", 354686)));
+      userRepository.save(new User(1, "rnolascoc@uni.pe", "prueba123", 254785));
+      userRepository.save(new User(2, "fbendezui@uni.pe", "prueba123", 586874));
+      userRepository.save(new User(3, "mvelar@uni.pe", "prueba123", 868743));
+      userRepository.save(new User(4, "ysuarezr@uni.pe", "prueba123", 354686));
 
-      log.info("Preloading " + currencyRepository.save(new Currency(1, "Soles", "S/")));
-      log.info("Preloading " + currencyRepository.save(new Currency(2, "Dolares", "$")));
-      log.info("Preloading " + currencyRepository.save(new Currency(3, "Euros", "€")));
+      currencyRepository.save(new Currency(1, "Soles", "S/"));
+      currencyRepository.save(new Currency(2, "Dolares", "$"));
+      currencyRepository.save(new Currency(3, "Euros", "€"));
 
-      log.info("Preloading " + accountRepository.save(new Account(1, 1, 1, "Cuenta Ahorro Soles 1", "19192799890059", 1254.53)));
-      log.info("Preloading " + accountRepository.save(new Account(2, 1, 1, "Cuenta Ahorro Soles 2", "56564676763138", 324.63)));
+      accountRepository.save(new Account(1, 1, 1, "Cuenta Ahorro Soles 1", "12592799890059", 1254.53));
+      accountRepository.save(new Account(2, 1, 1, "Cuenta Ahorro Soles 2", "12564676763138", 324.63));
 
-      log.info("Preloading " + transferenceRepository.save(new Transference(1,1, 2331.45, LocalDateTime.now(), true)));
+      //transferenceRepository.save(new Transference(1,1, 2331.45, LocalDateTime.now(), true));
 
     };
   }

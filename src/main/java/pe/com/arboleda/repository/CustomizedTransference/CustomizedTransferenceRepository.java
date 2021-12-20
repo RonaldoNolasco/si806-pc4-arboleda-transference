@@ -3,5 +3,5 @@ package pe.com.arboleda.repository.CustomizedTransference;
 import pe.com.arboleda.dto.TransferenceDTO;
 
 public interface CustomizedTransferenceRepository {
-  public String addTransference(TransferenceDTO transferenceDTO);
+  public String addTransference(TransferenceDTO transferenceDTO) throws Exception;
 }

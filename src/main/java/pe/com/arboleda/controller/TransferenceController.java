@@ -28,7 +28,13 @@ public class TransferenceController {
 
   @RequestMapping(value = "/transference", method = RequestMethod.POST)
   public ResponseEntity<String> transferenceBetweenAccounts(@RequestBody TransferenceDTO transferenceDTO){
-    return new ResponseEntity<>(transferenceRepository.addTransference(transferenceDTO), HttpStatus.ACCEPTED);
+    try{
+      return new ResponseEntity<>(transferenceRepository.addTransference(transferenceDTO), HttpStatus.ACCEPTED);
+    } catch(Exception e){
+      return new ResponseEntity<>(e.toString(), HttpStatus.BAD_REQUEST);
+    }
+    
+    
   }
 
 }
