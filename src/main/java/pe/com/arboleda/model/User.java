@@ -20,8 +20,6 @@ public class User {
     this.secretKey = secretKey;
   }
 
-
-
   public Integer getId() {
     return id;
   }

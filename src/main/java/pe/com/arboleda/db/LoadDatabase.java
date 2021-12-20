@@ -1,6 +1,4 @@
-package pe.com.arboleda;
-
-import java.time.LocalDateTime;
+package pe.com.arboleda.db;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import pe.com.arboleda.model.Account;
 import pe.com.arboleda.model.User;
 import pe.com.arboleda.model.Currency;
-import pe.com.arboleda.model.Transference;
 import pe.com.arboleda.repository.AccountRepository;
 import pe.com.arboleda.repository.CurrencyRepository;
 import pe.com.arboleda.repository.TransferenceRepository;

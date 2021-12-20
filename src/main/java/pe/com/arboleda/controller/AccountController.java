@@ -21,6 +21,6 @@ public class AccountController {
   
   @RequestMapping(value = "/accounts", method = RequestMethod.GET)
   public ResponseEntity<List<Account>> getAllAccounts(){
-    return new ResponseEntity<>(accountRepository.findAll(), HttpStatus.ACCEPTED);
+    return new ResponseEntity<>(accountRepository.findAll(), HttpStatus.OK);
   }
 }
