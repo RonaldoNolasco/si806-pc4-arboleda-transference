@@ -1,5 +1,7 @@
 package pe.com.arboleda;
 
+import java.time.LocalDateTime;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import pe.com.arboleda.model.Account;
 import pe.com.arboleda.model.User;
 import pe.com.arboleda.model.Currency;
+import pe.com.arboleda.model.Transference;
 import pe.com.arboleda.repository.AccountRepository;
 import pe.com.arboleda.repository.CurrencyRepository;
 import pe.com.arboleda.repository.TransferenceRepository;
@@ -33,6 +36,8 @@ public class LoadDatabase {
 
       log.info("Preloading " + accountRepository.save(new Account(1, 1, 1, "Cuenta Ahorro Soles 1", "19192799890059", 1254.53)));
       log.info("Preloading " + accountRepository.save(new Account(2, 1, 1, "Cuenta Ahorro Soles 2", "56564676763138", 324.63)));
+
+      log.info("Preloading " + transferenceRepository.save(new Transference(1,1, 2331.45, LocalDateTime.now(), true)));
 
     };
   }
