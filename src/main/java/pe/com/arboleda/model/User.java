@@ -1,24 +1,31 @@
 package pe.com.arboleda.model;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class User {
-  private @Id Long id;
+  private @Id Integer id;
   private String email;
   private String password;
-  private String secretKey;
+  private Integer secretKey;
 
-  public User(Long id, String email, String password, String secretKey) {
+  public User() {
+  }
+
+  public User(Integer id, String email, String password, Integer secretKey) {
     this.id = id;
     this.email = email;
     this.password = password;
     this.secretKey = secretKey;
   }
-  
-  public Long getId() {
+
+
+
+  public Integer getId() {
     return id;
   }
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
   public String getEmail() {
@@ -33,10 +40,10 @@ public class User {
   public void setPassword(String password) {
     this.password = password;
   }
-  public String getSecretKey() {
+  public Integer getSecretKey() {
     return secretKey;
   }
-  public void setSecretKey(String secretKey) {
+  public void setSecretKey(Integer secretKey) {
     this.secretKey = secretKey;
   }
 

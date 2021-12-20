@@ -2,8 +2,10 @@ package pe.com.arboleda.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Transference {
   private @Id Long id;
   private String sourceAccountId;
@@ -11,6 +13,9 @@ public class Transference {
   private Float amount;
   private LocalDateTime dateTime;
   private Boolean success;
+
+  public Transference() {
+  }
 
   public Transference(Long id, String sourceAccountId, String destinyAccountId, Float amount, LocalDateTime dateTime,
       Boolean success) {
@@ -21,7 +26,7 @@ public class Transference {
     this.dateTime = dateTime;
     this.success = success;
   }
-  
+
   public Long getId() {
     return id;
   }

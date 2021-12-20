@@ -1,7 +1,9 @@
 package pe.com.arboleda.model;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Service {
   private @Id Long id;
   private Long companyId;

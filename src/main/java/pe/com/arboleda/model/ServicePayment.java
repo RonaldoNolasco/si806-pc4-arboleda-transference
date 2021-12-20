@@ -2,8 +2,10 @@ package pe.com.arboleda.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class ServicePayment {
   private @Id Long id;
   private Long serviceId;

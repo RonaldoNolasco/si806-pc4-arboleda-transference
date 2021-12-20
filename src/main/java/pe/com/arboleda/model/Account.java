@@ -1,16 +1,21 @@
 package pe.com.arboleda.model;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Account {
-  private @Id Long id;
-  private Long userId;
-  private Long currencyId;
+  private @Id Integer id;
+  private Integer userId;
+  private Integer currencyId;
   private String name;
   private String accountNumber;
-  private Float availableAmount;
+  private Double availableAmount;
 
-  public Account(Long id, Long userId, Long currencyId, String name, String accountNumber, Float availableAmount) {
+  public Account() {
+  }
+
+  public Account(Integer id, Integer userId, Integer currencyId, String name, String accountNumber, Double availableAmount) {
     this.id = id;
     this.userId = userId;
     this.currencyId = currencyId;
@@ -19,22 +24,22 @@ public class Account {
     this.availableAmount = availableAmount;
   }
 
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
-  public Long getUserId() {
+  public Integer getUserId() {
     return userId;
   }
-  public void setUserId(Long userId) {
+  public void setUserId(Integer userId) {
     this.userId = userId;
   }
-  public Long getCurrencyId() {
+  public Integer getCurrencyId() {
     return currencyId;
   }
-  public void setCurrencyId(Long currencyId) {
+  public void setCurrencyId(Integer currencyId) {
     this.currencyId = currencyId;
   }
   public String getName() {
@@ -49,10 +54,10 @@ public class Account {
   public void setAccountNumber(String accountNumber) {
     this.accountNumber = accountNumber;
   }
-  public Float getAvailableAmount() {
+  public Double getAvailableAmount() {
     return availableAmount;
   }
-  public void setAvailableAmount(Float availableAmount) {
+  public void setAvailableAmount(Double availableAmount) {
     this.availableAmount = availableAmount;
   }
 
